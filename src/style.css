@@ -12,8 +12,8 @@
     left: 0;
     height: 100vh;
     width: 100%;
-    background-color: #254F1A;
-    color: #D2E823;
+    background-color: #374D6A;
+    color: white;
     font-family: 'Rubik';
 }
 
@@ -74,39 +74,36 @@ img, video{
 
 
 .home__hero__figure--wrapper{
+    width: 50%;
+    height: 50%;
     position: absolute;
     transform-style: preserve-3d;
     top: 50%;
     left: 50%;
     transform: rotateX(0deg) rotateY(0deg);
+    translate: -50% -50%;
 }
 
-.red{
+.home__hero__figure--image{
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) translateZ(0px);
-    width: 500px;
-    height: 400px;
-    background-color: red;
+    top: 0;
+    left: 0;
 }
-.green{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) translateZ(50px);
-    width: 300px;
-    height: 300px;
-    background-color: green;
+
+.home__hero__figure--asteroid1{
+    left: 100%;
+    translate: -50% 0;
+    transform: translateZ(-50px);
 }
-.blue{
-    position: absolute;
+.home__hero__figure--asteroid2{
+    translate: -50% 0;
+    transform: translateZ(50px);
+}
+
+.home__hero__figure--logo{
     top: 60%;
-    left: 30%;
-    transform: translate(-50%, -50%) translateZ(100px);
-    width: 150px;
-    height: 150px;
-    background-color: blue;
+    translate: -25% 0;
+    transform: translateZ(100px);
 }
 
 .linktree{

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function Home({ mouse }) {
 
-    const intensity = 50
+    const intensity = 75
 
     const containerVariants = {
         visible: {
@@ -36,9 +36,10 @@ export default function Home({ mouse }) {
                         animate="visible"
                         className="home__hero__figure--wrapper"
                     >
-                        <div className="red"></div>
-                        <div className="green"></div>
-                        <div className="blue"></div>
+                        <img src="figure/asteroid.png" alt="" className="home__hero__figure--image home__hero__figure--asteroid1" />
+                        <img src="figure/earth.png" alt="" className="home__hero__figure--image home__hero__figure--earth" />
+                        <img src="figure/asteroid.png" alt="" className="home__hero__figure--image home__hero__figure--asteroid2" />
+                        <img src="figure/logo.png" alt="" className="home__hero__figure--image home__hero__figure--logo" />
                     </motion.div>
                 </div>
             </div>
