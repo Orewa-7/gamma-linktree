@@ -3,6 +3,7 @@ import {
     createBrowserRouter,
     RouterProvider,
 } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import Home from "./Pages/Home.jsx";
 import Linktree from "./Pages/Linktree.jsx";
 
@@ -39,6 +40,8 @@ export default function App() {
         }
     }, [])
     return <>
-        <RouterProvider router={router} />
+        <AnimatePresence >
+            <RouterProvider router={router} />
+        </AnimatePresence>
     </>
 }

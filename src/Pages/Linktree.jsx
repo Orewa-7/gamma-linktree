@@ -1,4 +1,7 @@
-export default function Linktree(){
+import { Link } from "react-router-dom"
+import { motion } from "framer-motion";
+
+export default function Linktree() {
     const links = [
         {
             name: "Twitter",
@@ -36,24 +39,49 @@ export default function Linktree(){
             name: "Reddit",
             link: "https://www.reddit.com/user/GammaCities/"
         },
-        
-    ]
-    return <>
-        <section className="linktree">
-            <img src="/Logos/gammacities.png" alt="gammacities logo" />
-            {
-                links.map((item, key)=>{
 
-                    return <a
+    ];
+    const containerVariants = {
+        hidden: {
+            opacity: 0,
+        },
+        visible: {
+            opacity: 1,
+            transition: {
+                type: "spring"
+            }
+        }
+    }
+    return <>
+        <motion.section
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="linktree"
+        >
+            <Link to={"/"}>
+                <img src="/Logos/gammacities.png" alt="gammacities logo" />
+            </Link>
+            {
+                links.map((item, key) => {
+
+                    return <motion.a
+                        whileHover={{
+                            scale: 1.125,
+                            transition: {
+                                type: "spring",
+                                stiffness: 400
+                            }
+                        }}
                         className="Linktree__link"
                         key={key}
                         href={item.link}
                         target="_blank"
                     >
                         {item.name}
-                    </a>
+                    </motion.a>
                 })
             }
-        </section>
+        </motion.section>
     </>
 }
