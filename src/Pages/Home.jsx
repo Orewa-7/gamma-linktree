@@ -1,14 +1,15 @@
 import { useEffect, useRef } from "react"
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import Linktree from "./Linktree";
 
 export default function Home({ mouse }) {
 
-    const intensity = 75
+    const intensity = 50
 
     const containerVariants = {
         visible: {
-            rotateX:  -mouse.y * intensity,
+            rotateX: -mouse.y * intensity,
             rotateY: mouse.x * intensity,
             transition: {
                 type: 'Inertia',
@@ -17,7 +18,7 @@ export default function Home({ mouse }) {
     }
 
     const imageVariants = {
-        hidden:{
+        hidden: {
             scale: 0,
         },
         visible: {
@@ -28,11 +29,11 @@ export default function Home({ mouse }) {
         }
     }
 
-    const sectionVariants= {
-        hidden:{
+    const sectionVariants = {
+        hidden: {
             opacity: 0,
         },
-        visible:{
+        visible: {
             opacity: 1,
             transition: {
                 type: "spring"
@@ -41,14 +42,16 @@ export default function Home({ mouse }) {
     }
 
     return <>
-        <motion.section 
+        {/* <motion.section 
             variants={sectionVariants}
             initial="hidden"
             animate="visible"
             className="home"
-        >
+        > */}
+        <section className="home">
+
             <div className="home__hero">
-                <div className="home__hero__content">
+                {/* <div className="home__hero__content">
                     <h1 className="home__hero__content--title">
                         Everything you are. In one, simple link in bio.
                     </h1>
@@ -71,52 +74,55 @@ export default function Home({ mouse }) {
                             Claim your tree
                         </Link>
                     </motion.div>
-                </div>
+                </div> */}
+                <Linktree />
                 <div className="home__hero__figure">
                     <motion.div
                         variants={containerVariants}
                         animate="visible"
                         className="home__hero__figure--wrapper"
                     >
-                        <motion.img 
+                        <motion.img
                             variants={imageVariants}
                             initial="hidden"
                             animate="visible"
-                            src="figure/asteroid.png" 
-                            alt="" 
+                            src="figure/asteroid.png"
+                            alt=""
                             className="home__hero__figure--image home__hero__figure--asteroid1"
-                            
+
                         />
-                        <motion.img 
+                        <motion.img
                             variants={imageVariants}
                             initial="hidden"
                             animate="visible"
-                            src="figure/earth.png" 
-                            alt="" 
+                            src="figure/earth.png"
+                            alt=""
                             className="home__hero__figure--image home__hero__figure--earth"
-                            
+
                         />
-                        <motion.img 
+                        <motion.img
                             variants={imageVariants}
                             initial="hidden"
                             animate="visible"
-                            src="figure/asteroid.png" 
-                            alt="" 
+                            src="figure/asteroid.png"
+                            alt=""
                             className="home__hero__figure--image home__hero__figure--asteroid2"
-                            
+
                         />
-                        <motion.img 
+                        <motion.img
                             variants={imageVariants}
                             initial="hidden"
                             animate="visible"
-                            src="figure/logo.png" 
-                            alt="" 
+                            src="figure/logo.png"
+                            alt=""
                             className="home__hero__figure--image home__hero__figure--logo"
-                            
+
                         />
                     </motion.div>
                 </div>
             </div>
-        </motion.section>
+        </section>
+
+        {/* </motion.section> */}
     </>
 }

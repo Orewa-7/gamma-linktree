@@ -53,15 +53,16 @@ export default function Linktree() {
         }
     }
     return <>
-        <motion.section
+        {/* <motion.section
             variants={containerVariants}
             initial="hidden"
             animate="visible"
             className="linktree"
-        >
-            <Link to={"/"}>
+        > */}
+        <div className="linktree">
+            {/* <Link to={"/"}>
                 <img src="/Logos/gammacities.png" alt="gammacities logo" />
-            </Link>
+            </Link> */}
             {
                 links.map((item, key) => {
 
@@ -82,6 +83,7 @@ export default function Linktree() {
                     </motion.a>
                 })
             }
-        </motion.section>
+        </div>
+        {/* </motion.section> */}
     </>
 }

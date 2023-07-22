@@ -40,8 +40,10 @@ export default function App() {
         }
     }, [])
     return <>
-        <AnimatePresence >
+        {/* <AnimatePresence >
             <RouterProvider router={router} />
-        </AnimatePresence>
+        </AnimatePresence> */}
+
+        <Home mouse={mouseCoordinate} />
     </>
 }
