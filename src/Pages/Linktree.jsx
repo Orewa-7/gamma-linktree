@@ -24,7 +24,7 @@ export default function Linktree() {
             link: "https://discord.gg/gammacities"
         },
         {
-            name: "Telegramme",
+            name: "Telegram",
             link: "https://t.me/gammacities"
         },
         {
@@ -59,6 +59,9 @@ export default function Linktree() {
             animate="visible"
             className="linktree"
         > */}
+        <div className="logo-container">
+        <img className="logo" src="figure/light-logo.png" alt="" />
+      </div>
         <div className="linktree">
             {/* <Link to={"/"}>
                 <img src="/Logos/gammacities.png" alt="gammacities logo" />
@@ -81,6 +84,7 @@ export default function Linktree() {
                     >
                         {item.name}
                     </motion.a>
+                    
                 })
             }
         </div>
